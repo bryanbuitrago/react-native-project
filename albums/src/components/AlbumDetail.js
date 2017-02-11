@@ -5,18 +5,27 @@ import CardSection from './CardSection'
 
 // const AlbumDetail = (props) => {
   const AlbumDetail = ( { album }) => { //destructure way of props.album
-    const { title, artist, thumbnail_image } = album; // multiple references to the props object
-    const { thumbnailStyle, headerContentStyle } = styles; // destructure styles
+    const { title, artist, thumbnail_image, image } = album; // multiple references to the props object
+    const {
+      thumbnailStyle,
+      headerContentStyle,
+      thumbnailContainerStyle,
+      headerTextStyle,
+      imageStyle
+       } = styles; // destructure styles
   return (
     <Card>
       <CardSection>
-        <View>
+        <View style={thumbnailContainerStyle}>
             <Image style={thumbnailStyle} source={{ uri: thumbnail_image }} />
         </View>
         <View style={headerContentStyle}>
-          <Text>{title}</Text>
+          <Text style={headerTextStyle}>{title}</Text>
           <Text>{artist}</Text>
         </View>
+      </CardSection>
+      <CardSection>
+        <Image source={{ uri: image}} style={imageStyle} />
       </CardSection>
     </Card>
   )
@@ -27,9 +36,23 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'space-around'
   },
+  headerTextStyle: {
+    fontSize: 18
+  },
   thumbnailStyle: {
     height: 50,
     width:50
+  },
+  thumbnailContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 10,
+    marginRight: 10
+  },
+  imageStyle: {
+    height: 300,
+    flex: 1,
+    width: null
   }
 };
 
