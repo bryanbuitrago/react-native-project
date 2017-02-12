@@ -1,7 +1,8 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
 import Card from './Card';
-import CardSection from './CardSection'
+import CardSection from './CardSection';
+import Button from './Button';
 
 // const AlbumDetail = (props) => {
   const AlbumDetail = ( { album }) => { //destructure way of props.album
@@ -26,6 +27,9 @@ import CardSection from './CardSection'
       </CardSection>
       <CardSection>
         <Image source={{ uri: image}} style={imageStyle} />
+      </CardSection>
+      <CardSection>
+        <Button onPress={() => console.log(title)} />
       </CardSection>
     </Card>
   )
