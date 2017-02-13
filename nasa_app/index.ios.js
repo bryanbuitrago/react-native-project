@@ -25,4 +25,4 @@ const styles = {
 }
 
 // Render it to the device
-AppRegistry.registerComponent('albums', () => App);
+AppRegistry.registerComponent('NASA-App', () => App);
