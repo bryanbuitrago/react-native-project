@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import axios from 'axios';
-import AlbumDetail from './AlbumDetail';
+import PhotoDetail from './PhotoDetail';
 
-class AlbumList extends Component {
+class PhotoList extends Component {
   state = { albums: [] };
 
   componentWillMount() {
@@ -13,7 +13,7 @@ class AlbumList extends Component {
   }
 
   renderAlbums() {
-    return <AlbumDetail
+    return <PhotoDetail
      title={this.state.albums.title}
      copyright={this.state.albums.copyright}
      hdurl={this.state.albums.hdurl}
@@ -33,4 +33,4 @@ class AlbumList extends Component {
   }
 }
 
-export default AlbumList;
+export default PhotoList;

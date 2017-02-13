@@ -4,8 +4,8 @@ import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
 
-// const AlbumDetail = (props) => {
-  const AlbumDetail = (props) => {
+// const PhotoDetail = (props) => {
+  const PhotoDetail = (props) => {
     console.log(props.url);
 
     const {
@@ -66,4 +66,4 @@ const styles = {
   }
 };
 
-export default AlbumDetail;
+export default PhotoDetail;
