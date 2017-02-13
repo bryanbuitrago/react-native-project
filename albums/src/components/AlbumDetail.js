@@ -5,8 +5,9 @@ import CardSection from './CardSection';
 import Button from './Button';
 
 // const AlbumDetail = (props) => {
-  const AlbumDetail = ( { album }) => { //destructure way of props.album
-    const { title, artist, thumbnail_image, image, url } = album; // multiple references to the props object
+  const AlbumDetail = (props) => {
+    console.log(props.url);
+
     const {
       thumbnailStyle,
       headerContentStyle,
@@ -18,19 +19,20 @@ import Button from './Button';
     <Card>
       <CardSection>
         <View style={thumbnailContainerStyle}>
-            <Image style={thumbnailStyle} source={{ uri: thumbnail_image }} />
+            <Image style={thumbnailStyle} source={{ uri: props.url }} />
         </View>
         <View style={headerContentStyle}>
-          <Text style={headerTextStyle}>{title}</Text>
-          <Text>{artist}</Text>
+          <Text style={headerTextStyle}>{props.title}</Text>
+          <Text style={headerTextStyle}>{props.copyright}</Text>
         </View>
       </CardSection>
       <CardSection>
-        <Image source={{ uri: image}} style={imageStyle} />
+        <Image source={{ uri: props.url}} style={imageStyle} />
       </CardSection>
       <CardSection>
-        <Button onPress={() => Linking.openURL(url)}>
-          Buy Now
+       <Text style={headerTextStyle}>{props.description}</Text>
+        <Button>
+          Download
         </Button>
       </CardSection>
     </Card>
@@ -43,7 +45,9 @@ const styles = {
     justifyContent: 'space-around'
   },
   headerTextStyle: {
-    fontSize: 18
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white'
   },
   thumbnailStyle: {
     height: 50,

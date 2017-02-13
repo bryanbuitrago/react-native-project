@@ -7,18 +7,24 @@ class AlbumList extends Component {
   state = { albums: [] };
 
   componentWillMount() {
-    axios.get('https://rallycoding.herokuapp.com/api/music_albums')
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=6MJvYr9bOxzfzLoXAkDX3fExYsopZ0L6kvSBUwL9')
       .then(response => this.setState({ albums: response.data }));
+        // .then(response => console.log(response.data))
   }
 
   renderAlbums() {
-    return this.state.albums.map( album =>
-      <AlbumDetail key={album.title} album={album}
-      />)
+    return <AlbumDetail
+     title={this.state.albums.title}
+     copyright={this.state.albums.copyright}
+     hdurl={this.state.albums.hdurl}
+     url={this.state.albums.url}
+     description={this.state.albums.explanation}
+     headerText='NASA PICTURES'
+     />
   }
 
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     return (
       <ScrollView>
         {this.renderAlbums()}
