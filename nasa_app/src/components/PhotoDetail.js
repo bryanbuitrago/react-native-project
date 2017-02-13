@@ -18,9 +18,9 @@ import Button from './Button';
   return (
     <Card>
       <CardSection>
-        <View style={thumbnailContainerStyle}>
+        {/*<View style={thumbnailContainerStyle}>
             <Image style={thumbnailStyle} source={{ uri: props.url }} />
-        </View>
+        </View>*/}
         <View style={headerContentStyle}>
           <Text style={headerTextStyle}>{props.title}</Text>
           <Text style={headerTextStyle}>{props.copyright}</Text>
@@ -45,7 +45,7 @@ const styles = {
     justifyContent: 'space-around'
   },
   headerTextStyle: {
-    fontSize: 18,
+    fontSize: 10,
     fontWeight: 'bold',
     color: 'white'
   },
